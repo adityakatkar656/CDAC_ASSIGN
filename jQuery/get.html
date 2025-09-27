@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text"  id="b1" placeholder="enter name">
+    <input type="text"  id="b2" placeholder="enter name">
+    <button id="b10">click</button>
+    
+</body>
+<script>
+         $(document).ready(function(){
+            $("#b10").click(function (){
+             // window.alert("hii")
+                var a= $("#b1").val()
+                $("#b2").val(a)
+
+
+            })
+         })
+</script>
+</html>

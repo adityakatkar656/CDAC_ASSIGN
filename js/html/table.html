@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr=[];
+      function  table()
+        {
+          var b=document.getElementById('k').value;
+          for(var i=0;i<10;i++){ 
+            var sum=0;
+         sum += b;
+          arr[i]=sum;
+          }
+         show();
+          
+        }
+         function show(){
+        document.getElementById('r').innerHTML=arr;
+     }
+    </script>
+    <p>Enter number for table</p>
+    <input type="text" id="r">
+    <button type="button" onclick="table()" id="k">click</button>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="GetData()">
+        data from file
+    </button>
+    enter ID 1-100 <input id="i1" type="number" min="0" max="100">
+    <button id="btn1" onclick="GetDataByID()">get Data by id</button>
+    <p id="p">hi</p>
+</body>
+<script>
+   async function GetData(){
+        let str;
+       // let myPromise = new Promise(function(resolve , reject ) {
+
+        let request = new XMLHttpRequest();
+        request.open("GET", "https://jsonplaceholder.typicode.com/posts", true)
+        request.send();
+        
+         request.onload =  function () {            //response 
+            //console.log(this);
+            if (this.status == 200) {
+                //console.log(this.responseText)//JSON
+                let dataJson = this.responseText;
+                //JSON   Object 
+                let r = JSON.parse(dataJson);
+               // console.log(r);
+                 str += "<table border='1'>";
+                    //str += "<tr>";
+                    r.forEach(element => {
+                        str += `<tr><td>${element.id}</td>`;
+                        str += `<td>${element.title}</td></tr>`;
+                    });
+                   // str += "</tr>";
+                    str += "</table>";
+                      document.getElementById("p").innerHTML = str;
+                  // resolve(str);
+            }
+        }
+    //})
+    console.log(str);
+    // myPromise.then((data)=> {
+    //      document.getElementById("p").innerHTML = data;
+    //      console.log(data);
+    // },(error)=> { console.log(error)})
+     }
+
+        function GetDataByID(){
+        var id = document.getElementById("i1").value;
+        let request = new XMLHttpRequest();
+        request.open("GET", `https://jsonplaceholder.typicode.com/posts/${id}`, true)
+        request.send();
+        
+         request.onload = function () {            //response 
+            //console.log(this);
+            if (this.status == 200) {
+                console.log(this.responseText)//JSON
+                let dataJson = this.responseText;
+                //JSON   Object 
+                let r = JSON.parse(dataJson);
+                console.log(r);
+                var str = "<table border='1'>";
+                    //str += "<tr>";
+                    
+                        str += `<tr><td>${r.id}</td>`;
+                        str += `<td>${r.title}</td></tr>`;
+                  
+                   // str += "</tr>";
+                    str += "</table>";
+                   document.getElementById("p").innerHTML = str;
+            }
+        }
+    }
+</script>
+</html>

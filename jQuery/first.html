@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready( function(){
+        $(".btn1").click(function(){
+            $("#p1").hide();
+        })
+         
+        $("div").dblclick(function(){
+            $(this).hide();
+        })
+        $("#f1").click(function(){
+            $("#d1").fadeIn(3000);
+        })
+        $("#f2").click(function(){
+            $("div").fadeOut(3000);
+        })
+        $("#f3").click(function(){
+            $("div").toggle(3000);
+
+        })
+        $("#f4").click(function(){
+            $("#d1").fadeTo("fast",.07);
+        })
+
+        $("#s1").click(function(){
+            $("#d1").slideUp(1000);
+        })
+        $("#s2").click(function(){
+            $("#d1").slideDown(1000);
+        })
+        
+
+
+    }
+    )
+</script>
+<body>
+     <div id="d1" style="background-color: red;width: 100px;height: 100px;">
+         <p id="p1">inside Div</p>
+     </div>
+     <button class="btn1">Hide para</button>
+     <button id="f1">Fade in</button>
+     <button id="f2">fade> out</button>
+     <button id="f3">toggle </button>
+      <button id="f4">ggle </button>
+     <button id="s1">Slide Up</button>
+     <button id="s2">Slide Down</button>
+     <button id="b3">onclick</button>     
+     
+
+</body>
+</html>

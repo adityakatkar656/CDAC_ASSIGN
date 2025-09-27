@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var arr=[];
+    function addend(){
+         var d= document.getElementById('k').value;
+          arr.push(d);
+          show();                                                                            
+    }
+    function addstr(){
+        var b= document.getElementById('k').value;
+        arr.unshift(b);
+        show();
+    }
+    function delend(){
+
+arr.pop();
+show();
+    }
+function delstr()
+{
+    arr.shift()
+    show();
+}
+function odd()
+{
+   var arr1 = arr.filter(ele => ele%2 !== 0);
+   arr = arr1;
+   show();
+    
+}
+function even()
+{
+   var arr1 = arr.filter(ele => ele%2 == 0);
+   arr = arr1;
+   show();
+    
+}
+
+     function show(){
+        document.getElementById('par').innerHTML=arr;
+     }
+</script>
+<body>
+    <p id="par"></p>
+    <input type="text" id="k"><p>enter arry</p>
+    <button type="button" onclick="addend()">add at end</button>
+       <button type="button" onmouseover="addstr()">add at start</button>
+          <button type="button"onclick="delstr()" >delet from start </button>
+             <button type="button" onclick="delend()">delet from end</button>
+                <button type="button" onclick="odd()">display odd numbers</button>
+                   <button type="button"onclick="even()">display  even numbers</button>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" id="p1" placeholder="Enter num">
+    <button id="b1">onclick</button>
+    <p id="t1"></p>
+</body>
+<script>
+    $(document).ready(function(){
+
+        $("#b1").click(function(){
+        var a=$("#p1").val()
+              
+        let table1 = 
+         "<table border='3'>"
+        table1 += "<tr>"
+        for(i=1;i<=a;i++)
+    {
+        var tab=a*i;
+          table1 += `<td>${a} * ${i}  </td>`
+          table1 += `<td>${tab}</td>`
+          table1 += "</tr>"
+    }
+       table1 += '</table>'
+
+       $("#t1").html(table1);
+        }) 
+    })
+</script>
+</html>

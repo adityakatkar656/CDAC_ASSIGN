@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" required id="i1" placeholder="enter name" minlength="8" maxlength="10">
+    <button id="b1" onclick="validation()">click me</button>
+    <p id="p1"></p>
+</body>
+<script>
+    function display() {
+
+        let d = document.getElementById("t1").value;
+
+        if (d.trim() != "") {
+            document.getElementById("p1").innerText =
+                document.getElementById("t1").value;
+        } else {
+            document.getElementById("p1").innerText = "please enter data ";
+        }
+    }
+    function validation()
+    {
+        let ele= document.getElementById("i1")
+        if(ele.checkValidity())
+       {
+        document.getElementById("p1").innerHTML=
+        document.getElementById("i1").value;      
+     }
+        else
+       {
+         document.getElementById("p1").innerHTML=
+         ele.validationMessage
+       }
+}
+</script>
+</html>

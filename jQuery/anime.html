@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+    $(document).ready(function(){
+      $("#b1").click(function(){
+         $("#d1").animate({left:'500px',height:'200px'},1000);
+         $("#d1").css({background:"aqua"});
+       }); 
+       $("#b2").click(function(){
+         $("#d1").stop();
+       })
+    })
+ </script>
+<body>
+     <div id="d1" style="background-color: red;width: 100px;height: 100px; position:absolute;">
+     </div>
+     <br><br><br>
+     <br><br><br>
+     <br><br><br>
+     <button id="b1" >animate</button>
+     <button id="b2">Stop</button>
+</body>
+</html>
+

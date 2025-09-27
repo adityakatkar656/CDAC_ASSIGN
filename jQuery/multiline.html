@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+    $(document).ready(function(){
+         $("button").click(function(){
+            var txt = $("textarea").val();
+            
+            var len = txt.length;
+            var rows = 5;
+            var str = "";
+            var a = 0;
+            var b = len/rows;
+            for(i = 0;i<5;i++){
+                var part = txt.slice(a,b);
+               str += part;
+               str += "<br>";
+                a = b;
+                b = b + len/rows;
+            }
+            $("p").html(str);
+         })
+    })
+ </script>
+<body>
+    <textarea rows="5"></textarea>
+    <button>Submit</button>
+    <p></p>
+</body>
+</html>

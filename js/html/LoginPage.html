@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       
+</head>
+ <style>
+        .errormessage
+        {
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        function validate(){
+        var name = document.forms["form1"]["uname"].value;
+        var pass = document.forms["form1"]["pass"].value;
+          
+//console.log("inside validate");
+        // window.alert(name);
+
+         if(name.trim() == ""){
+            document.getElementsByClassName("errormessage")[0].style.visibility = 'visible';
+           
+           return false;
+         }
+         if(pass != "ABC" ){
+             document.getElementsByClassName("errormessage")[1].style.visibility = 'visible';
+             return false;
+         }
+    }
+    </script>
+<body>
+    <pre>
+     <form name="form1" onsubmit="return validate()">
+       <label>UserName :</label> <input type="text" name="uname" placeholder="enter uname">
+       <p class="errormessage" >enter user name</p>
+        <label>Password :</label><input type="password" name="pass" placeholder="enter pass"> 
+        <p class="errormessage" >enter password</p>
+        <button type="submit" value="action">submit</button>
+     </form>
+    </pre>
+
+</body>
+</html>
